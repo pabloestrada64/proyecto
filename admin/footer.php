@@ -141,15 +141,15 @@
 
 		function confirmDelete()
 	    {
-	        return confirm("Are you sure want to delete this data?");
+	        return confirm("Esta seguro de eliminar esta informacion?");
 	    }
 	    function confirmActive()
 	    {
-	        return confirm("Are you sure want to Active?");
+	        return confirm("Esta seguro de activar?");
 	    }
 	    function confirmInactive()
 	    {
-	        return confirm("Are you sure want to Inactive?");
+	        return confirm("Esta seguro de Desactivar?");
 	    }
 
 	</script>

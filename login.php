@@ -50,7 +50,7 @@ if(isset($_POST['form1'])) {
 
 <div class="page-banner" style="background-color:#444;background-image: url(assets/uploads/<?php echo $banner_login; ?>);">
     <div class="inner">
-        <h1>Inicio de sesion</h1>
+        <h1>Inicio de sesión</h1>
     </div>
 </div>
 
@@ -75,7 +75,7 @@ if(isset($_POST['form1'])) {
                                 }
                                 ?>
                                 <div class="form-group">
-                                    <label for="">Correro electronico *</label>
+                                    <label for="">Correo electrónico *</label>
                                     <input type="email" class="form-control" name="cust_email">
                                 </div>
                                 <div class="form-group">

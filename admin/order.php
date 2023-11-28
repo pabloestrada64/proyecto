@@ -6,11 +6,11 @@ if(isset($_POST['form1'])) {
     $valid = 1;
     if(empty($_POST['subject_text'])) {
         $valid = 0;
-        $error_message .= 'Subject can not be empty\n';
+        $error_message .= 'El asunto no puede estar vacío.\n';
     }
     if(empty($_POST['message_text'])) {
         $valid = 0;
-        $error_message .= 'Subject can not be empty\n';
+        $error_message .= 'El asunto no puede estar vacío.\n';
     }
     if($valid == 1) {
 
@@ -92,9 +92,9 @@ Unit Price: '.$row['unit_price'].'<br>
         $to_customer = $cust_email;
         $message = '
 <html><body>
-<h3>Message: </h3>
+<h3>Mensaje: </h3>
 '.$message_text.'
-<h3>Order Details: </h3>
+<h3>Detalles de orden: </h3>
 '.$order_detail.'
 </body></html>
 ';
@@ -107,7 +107,7 @@ Unit Price: '.$row['unit_price'].'<br>
         // Sending email to admin                  
         mail($to_customer, $subject_text, $message, $headers);
         
-        $success_message = 'Your email to customer is sent successfully.';
+        $success_message = 'Su email al cliente fue mandado exitosamente.';
 
     }
 }
@@ -123,7 +123,7 @@ if($success_message != '') {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View Orders</h1>
+		<h1>Vista de Ordenes</h1>
 	</div>
 </section>
 
@@ -141,15 +141,15 @@ if($success_message != '') {
 			<thead>
 			    <tr>
 			        <th>#</th>
-                    <th>Customer</th>
-			        <th>Product Details</th>
+                    <th>Cliente</th>
+			        <th>Detalles de Productos</th>
                     <th>
-                    	Payment Information
+                    	Informacion de Pago
                     </th>
-                    <th>Paid Amount</th>
-                    <th>Payment Status</th>
-                    <th>Shipping Status</th>
-			        <th>Action</th>
+                    <th>Cantidad de Pago</th>
+                    <th>Estado de Pago</th>
+                    <th>Estado de Envio</th>
+			        <th>Accion</th>
 			    </tr>
 			</thead>
             <tbody>
@@ -165,15 +165,15 @@ if($success_message != '') {
 	                    <td><?php echo $i; ?></td>
 	                    <td>
                             <b>Id:</b> <?php echo $row['customer_id']; ?><br>
-                            <b>Name:</b><br> <?php echo $row['customer_name']; ?><br>
+                            <b>Nombre:</b><br> <?php echo $row['customer_name']; ?><br>
                             <b>Email:</b><br> <?php echo $row['customer_email']; ?><br><br>
-                            <a href="#" data-toggle="modal" data-target="#model-<?php echo $i; ?>"class="btn btn-warning btn-xs" style="width:100%;margin-bottom:4px;">Send Message</a>
+                            <a href="#" data-toggle="modal" data-target="#model-<?php echo $i; ?>"class="btn btn-warning btn-xs" style="width:100%;margin-bottom:4px;">Enviar Mensaje</a>
                             <div id="model-<?php echo $i; ?>" class="modal fade" role="dialog">
 								<div class="modal-dialog">
 									<div class="modal-content">
 										<div class="modal-header">
 											<button type="button" class="close" data-dismiss="modal">&times;</button>
-											<h4 class="modal-title" style="font-weight: bold;">Send Message</h4>
+											<h4 class="modal-title" style="font-weight: bold;">Enviar Mensaje</h4>
 										</div>
 										<div class="modal-body" style="font-size: 14px">
 											<form action="" method="post">
@@ -181,26 +181,26 @@ if($success_message != '') {
                                                 <input type="hidden" name="payment_id" value="<?php echo $row['payment_id']; ?>">
 												<table class="table table-bordered">
 													<tr>
-														<td>Subject</td>
+														<td>Asunto</td>
 														<td>
                                                             <input type="text" name="subject_text" class="form-control" style="width: 100%;">
 														</td>
 													</tr>
                                                     <tr>
-                                                        <td>Message</td>
+                                                        <td>Mensaje</td>
                                                         <td>
                                                             <textarea name="message_text" class="form-control" cols="30" rows="10" style="width:100%;height: 200px;"></textarea>
                                                         </td>
                                                     </tr>
 													<tr>
 														<td></td>
-														<td><input type="submit" value="Send Message" name="form1"></td>
+														<td><input type="submit" value="Enviar" name="form1"></td>
 													</tr>
 												</table>
 											</form>
 										</div>
 										<div class="modal-footer">
-											<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 										</div>
 									</div>
 								</div>
@@ -212,35 +212,35 @@ if($success_message != '') {
                            $statement1->execute(array($row['payment_id']));
                            $result1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
                            foreach ($result1 as $row1) {
-                                echo '<b>Product:</b> '.$row1['product_name'];
-                                echo '<br>(<b>Size:</b> '.$row1['size'];
+                                echo '<b>Producto:</b> '.$row1['product_name'];
+                                echo '<br>(<b>Tamaño:</b> '.$row1['size'];
                                 echo ', <b>Color:</b> '.$row1['color'].')';
-                                echo '<br>(<b>Quantity:</b> '.$row1['quantity'];
-                                echo ', <b>Unit Price:</b> '.$row1['unit_price'].')';
+                                echo '<br>(<b>Cantidad:</b> '.$row1['quantity'];
+                                echo ', <b>Precio Unitario:</b> '.$row1['unit_price'].')';
                                 echo '<br><br>';
                            }
                            ?>
                         </td>
                         <td>
                         	<?php if($row['payment_method'] == 'PayPal'): ?>
-                        		<b>Payment Method:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
-                        		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>
-                        		<b>Date:</b> <?php echo $row['payment_date']; ?><br>
-                        		<b>Transaction Id:</b> <?php echo $row['txnid']; ?><br>
+                        		<b>Metodo de Pago:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
+                        		<b>Id de Pago:</b> <?php echo $row['payment_id']; ?><br>
+                        		<b>Fecha:</b> <?php echo $row['payment_date']; ?><br>
+                        		<b>Id de Transaccion:</b> <?php echo $row['txnid']; ?><br>
                         	<?php elseif($row['payment_method'] == 'Stripe'): ?>
-                        		<b>Payment Method:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
-                        		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>
-								<b>Date:</b> <?php echo $row['payment_date']; ?><br>
-                        		<b>Transaction Id:</b> <?php echo $row['txnid']; ?><br>
-                        		<b>Card Number:</b> <?php echo $row['card_number']; ?><br>
-                        		<b>Card CVV:</b> <?php echo $row['card_cvv']; ?><br>
-                        		<b>Expire Month:</b> <?php echo $row['card_month']; ?><br>
-                        		<b>Expire Year:</b> <?php echo $row['card_year']; ?><br>
+                        		<b>Metodo de Pago:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
+                        		<b>Id de Pago:</b> <?php echo $row['payment_id']; ?><br>
+								<b>Fecha:</b> <?php echo $row['payment_date']; ?><br>
+                        		<b>Id de Transaccion:</b> <?php echo $row['txnid']; ?><br>
+                        		<b>Numero de tarjeta:</b> <?php echo $row['card_number']; ?><br>
+                        		<b>Tarjeta CVV:</b> <?php echo $row['card_cvv']; ?><br>
+                        		<b>Mes de Expiracion:</b> <?php echo $row['card_month']; ?><br>
+                        		<b>Año de Expiracion:</b> <?php echo $row['card_year']; ?><br>
                         	<?php elseif($row['payment_method'] == 'Bank Deposit'): ?>
-                        		<b>Payment Method:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
-                        		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>
-								<b>Date:</b> <?php echo $row['payment_date']; ?><br>
-                        		<b>Transaction Information:</b> <br><?php echo $row['bank_transaction_info']; ?><br>
+                        		<b>Metodo de Pago:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
+                        		<b>Id de Pago:</b> <?php echo $row['payment_id']; ?><br>
+								<b>Fecha:</b> <?php echo $row['payment_date']; ?><br>
+                        		<b>Informacion de Transaccion:</b> <br><?php echo $row['bank_transaction_info']; ?><br>
                         	<?php endif; ?>
                         </td>
                         <td>$<?php echo $row['paid_amount']; ?></td>
@@ -250,7 +250,7 @@ if($success_message != '') {
                             <?php
                                 if($row['payment_status']=='Pending'){
                                     ?>
-                                    <a href="order-change-status.php?id=<?php echo $row['id']; ?>&task=Completed" class="btn btn-success btn-xs" style="width:100%;margin-bottom:4px;">Mark Complete</a>
+                                    <a href="order-change-status.php?id=<?php echo $row['id']; ?>&task=Completed" class="btn btn-success btn-xs" style="width:100%;margin-bottom:4px;">Marcar Completado</a>
                                     <?php
                                 }
                             ?>
@@ -262,14 +262,14 @@ if($success_message != '') {
                             if($row['payment_status']=='Completed') {
                                 if($row['shipping_status']=='Pending'){
                                     ?>
-                                    <a href="shipping-change-status.php?id=<?php echo $row['id']; ?>&task=Completed" class="btn btn-warning btn-xs" style="width:100%;margin-bottom:4px;">Mark Complete</a>
+                                    <a href="shipping-change-status.php?id=<?php echo $row['id']; ?>&task=Completed" class="btn btn-warning btn-xs" style="width:100%;margin-bottom:4px;">Marcar Completado</a>
                                     <?php
                                 }
                             }
                             ?>
                         </td>
 	                    <td>
-                            <a href="#" class="btn btn-danger btn-xs" data-href="order-delete.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete" style="width:100%;">Delete</a>
+                            <a href="#" class="btn btn-danger btn-xs" data-href="order-delete.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete" style="width:100%;">Eliminar</a>
 	                    </td>
 	                </tr>
             		<?php
@@ -289,14 +289,14 @@ if($success_message != '') {
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+                <h4 class="modal-title" id="myModalLabel">Confirmar Eliminacion</h4>
             </div>
             <div class="modal-body">
-                Sure you want to delete this item?
+                Esta seguro de eliminar este producto?
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
+                <a class="btn btn-danger btn-ok">Eliminar</a>
             </div>
         </div>
     </div>

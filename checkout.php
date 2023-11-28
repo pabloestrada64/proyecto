@@ -156,7 +156,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                         }                        
                         ?>
                         <tr>
-                            <td colspan="7" class="total-text"><?php echo 'Costo de compra' ?></td>
+                            <td colspan="7" class="total-text"><?php echo 'Costo de envio' ?></td>
                             <td class="total-amount"><?php echo 'Bs. ' ?><?php echo $shipping_cost; ?></td>
                         </tr>
                         <tr>

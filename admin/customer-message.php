@@ -14,7 +14,7 @@
 				<div class="box box-info">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Select a Customer <span>*</span></label>
+							<label for="" class="col-sm-2 control-label">Seleccionar Cliente <span>*</span></label>
 							<div class="col-sm-4">
 								<select name="cust_id" class="form-control select2">
 								<?php
@@ -34,7 +34,7 @@
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label"></label>
 							<div class="col-sm-6">
-								<button type="submit" class="btn btn-success pull-left" name="form1">Submit</button>
+								<button type="submit" class="btn btn-success pull-left" name="form1">Aceptar</button>
 							</div>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 <?php if(isset($_POST['form1'])): ?>
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View All Customer Messages</h1>
+		<h1>Ver los mensajes de todos los clientes</h1>
 	</div>
 </section>
 

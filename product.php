@@ -486,7 +486,7 @@ if($success_message1 != '') {
 							<ul class="nav nav-tabs" role="tablist">
 								<li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab"><?php echo 'Descripcion' ?></a></li>
 								<li role="presentation"><a href="#feature" aria-controls="feature" role="tab" data-toggle="tab"><?php echo 'Caracteristicas' ?></a></li>
-                                <li role="presentation"><a href="#condition" aria-controls="condition" role="tab" data-toggle="tab"><?php echo 'Condicion' ?></a></li>
+                                <li role="presentation"><a href="#condition" aria-controls="condition" role="tab" data-toggle="tab"><?php echo 'Condiciones de cuidado' ?></a></li>
                                 <li role="presentation"><a href="#return_policy" aria-controls="return_policy" role="tab" data-toggle="tab"><?php echo 'Politica de devoluciones' ?></a></li>
                                <!-- <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab"><?php echo LANG_VALUE_63; ?></a></li> -->
 							</ul>

@@ -2,10 +2,10 @@
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View Products</h1>
+		<h1>Vista de Productos</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="product-add.php" class="btn btn-primary btn-sm">Add Product</a>
+		<a href="product-add.php" class="btn btn-primary btn-sm">Añadir Producto</a>
 	</div>
 </section>
 
@@ -18,15 +18,15 @@
 					<thead class="thead-dark">
 							<tr>
 								<th width="10">#</th>
-								<th>Photo</th>
-								<th width="160">Product Name</th>
-								<th width="60">Old Price</th>
-								<th width="60">(C) Price</th>
-								<th width="60">Quantity</th>
-								<th>Featured?</th>
-								<th>Active?</th>
-								<th>Category</th>
-								<th width="80">Action</th>
+								<th>Foto</th>
+								<th width="160">Nombre de Producto</th>
+								<th width="60">Precio antes</th>
+								<th width="60">(C) Precio</th>
+								<th width="60">Cantidad</th>
+								<th>Destacados?</th>
+								<th>Activo?</th>
+								<th>Categoria</th>
+								<th width="80">Accion</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -71,19 +71,19 @@
 									<td><?php echo $i; ?></td>
 									<td style="width:82px;"><img src="../assets/uploads/<?php echo $row['p_featured_photo']; ?>" alt="<?php echo $row['p_name']; ?>" style="width:80px;"></td>
 									<td><?php echo $row['p_name']; ?></td>
-									<td>$<?php echo $row['p_old_price']; ?></td>
-									<td>$<?php echo $row['p_current_price']; ?></td>
+									<td>Bs. <?php echo $row['p_old_price']; ?></td>
+									<td>Bs. <?php echo $row['p_current_price']; ?></td>
 									<td><?php echo $row['p_qty']; ?></td>
 									<td>
-										<?php if($row['p_is_featured'] == 1) {echo '<span class="badge badge-success" style="background-color:green;">Yes</span>';} else {echo '<span class="badge badge-success" style="background-color:red;">No</span>';} ?>
+										<?php if($row['p_is_featured'] == 1) {echo '<span class="badge badge-success" style="background-color:green;">Si</span>';} else {echo '<span class="badge badge-success" style="background-color:red;">No</span>';} ?>
 									</td>
 									<td>
-										<?php if($row['p_is_active'] == 1) {echo '<span class="badge badge-success" style="background-color:green;">Yes</span>';} else {echo '<span class="badge badge-danger" style="background-color:red;">No</span>';} ?>
+										<?php if($row['p_is_active'] == 1) {echo '<span class="badge badge-success" style="background-color:green;">Si</span>';} else {echo '<span class="badge badge-danger" style="background-color:red;">No</span>';} ?>
 									</td>
 									<td><?php echo $row['tcat_name']; ?><br><?php echo $row['mcat_name']; ?><br><?php echo $row['ecat_name']; ?></td>
 									<td>										
-										<a href="product-edit.php?id=<?php echo $row['p_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
-										<a href="#" class="btn btn-danger btn-xs" data-href="product-delete.php?id=<?php echo $row['p_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>  
+										<a href="product-edit.php?id=<?php echo $row['p_id']; ?>" class="btn btn-primary btn-xs">Editar</a>
+										<a href="#" class="btn btn-danger btn-xs" data-href="product-delete.php?id=<?php echo $row['p_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Eliminar</a>  
 									</td>
 								</tr>
 								<?php
@@ -103,15 +103,15 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+                <h4 class="modal-title" id="myModalLabel">Confirmacion eliminación</h4>
             </div>
             <div class="modal-body">
-                <p>Are you sure want to delete this item?</p>
-                <p style="color:red;">Be careful! This product will be deleted from the order table, payment table, size table, color table and rating table also.</p>
+                <p>Esta seguro de eliminar este producto?</p>
+                <p style="color:red;">¡Ten cuidado! Este producto también se eliminará de la tabla de pedidos, de la tabla de pagos, de la tabla de tallas, de la tabla de colores y de la tabla de clasificaciones.</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                <a class="btn btn-danger btn-ok">Eliminar</a>
             </div>
         </div>
     </div>

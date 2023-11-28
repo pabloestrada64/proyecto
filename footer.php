@@ -88,7 +88,7 @@ This link will be active only for 24 hours.
 							// Sending the email
 							mail($to, $subject, $message, $headers);
 
-							$success_message1 = 'Porfavor revise su correo electronico y confirme su suscripcion';
+							$success_message1 = 'Porfavor revise su correo electronico y confirme su suscripción';
 				    	}
 				    }
 			    }
@@ -104,7 +104,7 @@ This link will be active only for 24 hours.
 					<?php $csrf->echoInputField(); ?>
 					<h2>Suscribirse a nuestro boletin informativo</h2>
 					<div class="input-group">
-			        	<input type="email" class="form-control" placeholder="Ingrese su dirrecion Email" name="email_subscribe">
+			        	<input type="email" class="form-control" placeholder="Ingrese su dirección Email" name="email_subscribe">
 			         	<span class="input-group-btn">
 			         	<button class="btn btn-theme" type="submit" name="form_subscribe">Suscribirse</button>
 			         	</span>

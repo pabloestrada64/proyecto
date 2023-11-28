@@ -10,7 +10,7 @@ $error_message='';
 if(isset($_POST['form1'])) {
         
     if(empty($_POST['email']) || empty($_POST['password'])) {
-        $error_message = 'Email and/or Password can not be empty<br>';
+        $error_message = 'Email and/or Password no puede estar vacio<br>';
     } else {
 		
 		$email = strip_tags($_POST['email']);
@@ -21,14 +21,14 @@ if(isset($_POST['form1'])) {
     	$total = $statement->rowCount();    
         $result = $statement->fetchAll(PDO::FETCH_ASSOC);    
         if($total==0) {
-            $error_message .= 'Email Address does not match<br>';
+            $error_message .= 'Direccion email no encontrado<br>';
         } else {       
             foreach($result as $row) { 
                 $row_password = $row['password'];
             }
         
             if( $row_password != md5($password) ) {
-                $error_message .= 'Password does not match<br>';
+                $error_message .= 'Contraseña no coincide<br>';
             } else {       
             
 				$_SESSION['user'] = $row;

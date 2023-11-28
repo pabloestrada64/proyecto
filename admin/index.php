@@ -1,7 +1,7 @@
 <?php require_once('header.php'); ?>
 
 <section class="content-header">
-	<h1>Dashboard</h1>
+	<h1>Panel Principal</h1>
 </section>
 
 <?php
@@ -58,7 +58,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
                 <div class="inner">
                   <h3><?php echo $total_product; ?></h3>
 
-                  <p>Products</p>
+                  <p>Productos</p>
                 </div>
                 <div class="icon">
                   <i class="ionicons ion-android-cart"></i>
@@ -73,7 +73,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
                 <div class="inner">
                   <h3><?php echo $total_order_pending; ?></h3>
 
-                  <p>Pending Orders</p>
+                  <p>Ordenes Pendientes</p>
                 </div>
                 <div class="icon">
                   <i class="ionicons ion-clipboard"></i>
@@ -88,7 +88,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
                 <div class="inner">
                   <h3><?php echo $total_order_completed; ?></h3>
 
-                  <p>Completed Orders</p>
+                  <p>Ordenes Completadas</p>
                 </div>
                 <div class="icon">
                   <i class="ionicons ion-android-checkbox-outline"></i>
@@ -103,7 +103,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
                 <div class="inner">
                   <h3><?php echo $total_shipping_completed; ?></h3>
 
-                  <p>Completed Shipping</p>
+                  <p>Envio Completado</p>
                 </div>
                 <div class="icon">
                   <i class="ionicons ion-checkmark-circled"></i>
@@ -119,7 +119,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $total_order_complete_shipping_pending; ?></h3>
   
-					<p>Pending Shippings</p>
+					<p>Envio Pendiente</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-load-a"></i>
@@ -134,7 +134,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $total_customers; ?></h3>
   
-					<p>Active Customers</p>
+					<p>Clientes Activos</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-person-stalker"></i>
@@ -149,7 +149,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $total_subscriber; ?></h3>
   
-					<p>Subscriber</p>
+					<p>Suscritos</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-person-add"></i>
@@ -164,7 +164,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $available_shipping; ?></h3>
   
-					<p>Available Shippings</p>
+					<p>Envios Disponibles</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-location"></i>
@@ -179,7 +179,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $total_top_category; ?></h3>
   
-					<p>Top Categories</p>
+					<p>Categorias Principales</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-arrow-up-b"></i>
@@ -194,7 +194,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $total_mid_category; ?></h3>
   
-					<p>Mid Categories</p>
+					<p>Categorias Medias</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-android-menu"></i>
@@ -209,7 +209,7 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  <div class="inner">
 					<h3><?php echo $total_end_category; ?></h3>
   
-					<p>End Categories</p>
+					<p>Categorias Finales</p>
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-arrow-down-b"></i>

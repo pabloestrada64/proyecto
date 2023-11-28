@@ -289,12 +289,12 @@ foreach ($result as $row) {
 					<?php
 					if(isset($_SESSION['customer'])) {
 						?>
-						<li><i class="fa fa-user"></i> Iniciado sesion como <?php echo $_SESSION['customer']['cust_name']; ?></li>
+						<li><i class="fa fa-user"></i> Iniciado sesión como <?php echo $_SESSION['customer']['cust_name']; ?></li>
 						<li><a href="dashboard.php"><i class="fa fa-home"></i> Panel</a></li>
 						<?php
 					} else {
 						?>
-						<li><a href="login.php"><i class="fa fa-sign-in"></i> Iniciar Sesion</a></li>
+						<li><a href="login.php"><i class="fa fa-sign-in"></i> Iniciar Sesión</a></li>
 						<li><a href="registration.php"><i class="fa fa-user-plus"></i> Registrarse</a></li>
 						<?php	
 					}
@@ -345,7 +345,7 @@ foreach ($result as $row) {
 				<div class="menu-container">
 					<div class="menu">
 						<ul>
-							<li><a href="index.php">Home</a></li>
+							<li><a href="index.php">Inicio</a></li>
 							
 							<?php
 							$statement = $pdo->prepare("SELECT * FROM tbl_top_category WHERE show_on_menu=1");
@@ -399,7 +399,7 @@ foreach ($result as $row) {
 							?>
 
 							<li><a href="about.php"><?php echo $about_title; ?></a></li>
-							<li><a href="faq.php"><?php echo $faq_title; ?></a></li>
+							
 
 							<li><a href="contact.php"><?php echo $contact_title; ?></a></li>
 						</ul>

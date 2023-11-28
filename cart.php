@@ -80,8 +80,8 @@ if(isset($_POST['form1'])) {
 			<div class="col-md-12">
 
                 <?php if(!isset($_SESSION['cart_p_id'])): ?>
-                    <?php echo '<h2 class="text-center">Cart is Empty!!</h2></br>'; ?>
-                    <?php echo '<h4 class="text-center">Add products to the cart in order to view it here.</h4>'; ?>
+                    <?php echo '<h2 class="text-center">Carrito esta vacio!!</h2></br>'; ?>
+                    <?php echo '<h4 class="text-center">Añade productos al carrito para verlo aquí.</h4>'; ?>
                 <?php else: ?>
                 <form action="" method="post">
                     <?php $csrf->echoInputField(); ?>

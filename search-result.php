@@ -25,7 +25,7 @@ foreach ($result as $row) {
     <div class="overlay"></div>
     <div class="inner">
         <h1>
-            Search By: 
+            Busqueda de por: 
             <?php 
                 $search_text = strip_tags($_REQUEST['search_text']); 
                 echo $search_text; 
@@ -146,7 +146,7 @@ foreach ($result as $row) {
                         <?php
                             
                             if(!$total_pages):
-                                echo '<span style="color:red;font-size:18px;">No result found</span>';
+                                echo '<span style="color:red;font-size:18px;"> No se encontraron resultados</span>';
                             else:
                             foreach ($result as $row) {
                                 ?>
@@ -159,10 +159,10 @@ foreach ($result as $row) {
                                         <div class="text">
                                             <h3><a href="product.php?id=<?php echo $row['p_id']; ?>"><?php echo $row['p_name']; ?></a></h3>
                                             <h4>
-                                                $<?php echo $row['p_current_price']; ?> 
+                                                Bs. <?php echo $row['p_current_price']; ?> 
                                                 <?php if($row['p_old_price'] != ''): ?>
                                                 <del>
-                                                    $<?php echo $row['p_old_price']; ?>
+                                                    Bs<?php echo $row['p_old_price']; ?>
                                                 </del>
                                                 <?php endif; ?>
                                             </h4>
@@ -238,11 +238,11 @@ foreach ($result as $row) {
                                             <?php if($row['p_qty'] == 0): ?>
                                                 <div class="out-of-stock">
                                                     <div class="inner">
-                                                        Out Of Stock
+                                                        Agotado
                                                     </div>
                                                 </div>
                                             <?php else: ?>
-                                                <p><a href="product.php?id=<?php echo $row['p_id']; ?>">Add to Cart</a></p>
+                                                <p><a href="product.php?id=<?php echo $row['p_id']; ?>">Añadir al carrito</a></p>
                                             <?php endif; ?>
                                         </div>
                                     </div>
